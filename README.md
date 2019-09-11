@@ -5,15 +5,8 @@ The capstone will build upon the knowledge you have gained in the course in orde
 ***
 # Smart Contract adddress
 Smart Contracts are deployed to __Rinkeby__ testnet.
-* __ERC165__: 
-* __ERC721__: 
-* __ERC721Enumerable__: 
-* __ERC721Metadata__: 
-* __ERC721Token__: 
-* __Oraclize__: 
-* __Ownable__: 
-* __SolnSquareVerifier__: 
-* __Verifier__: 
+* __SolnSquareVerifier__: 0x8aa7eCA13233910448A6cf5239DF19b5b48DcAE3
+* __Verifier__: 0x63e1F18128d08E5B21Cee4AA38F0880465D16F68
 
 ***
 # Project Resources
