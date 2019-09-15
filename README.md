@@ -22,23 +22,23 @@ cd /<path to real-estata-marketplace project>/eth-contracts
 npm install
 ```
 ### Use Zokrates to prepare verifier and proof json
-###### 1. Go to code directory and run docker for ZoKrates
+###### 1. _Go to code directory and run docker for ZoKrates_
 ```
 cd real-estate-marketplace/zokrates/code
 docker run -v /<path to real-estata-marketplace project>/zokrates/code:/home/zokrates/code -ti zokrates/zokrates /bin/bash
 ```
-###### 2. Compile the square code
+###### 2. _Compile the square code_
 ```
 ~/zokrates compile -i ~/code/square/square.code
 ~/zokrates setup
 ```
-###### 3. Generate witness and proof and export verifier
+###### 3. _Generate witness and proof and export verifier_
 ```
 ~/zokrates compute-witness -a 3 9
 ~/zokrates generate-proof
 ~/zokrates export-verifier
 ```
-###### 4. Move generated code from docker to local file system
+###### 4. _Move generated code from docker to local file system_
 Open another terminal
 ```
 docker cp <container ID>:/home/zokrates/out real-estate-marketplace/zokrates/code/square/ 
@@ -49,7 +49,7 @@ docker cp <container ID>:/home/zokrates/verification.key real-estate-marketplace
 docker cp <container ID>:/home/zokrates/verifier.sol real-estate-marketplace/zokrates/code/square/
 docker cp <container ID>:/home/zokrates/witness real-estate-marketplace/zokrates/code/square/
 ```
-###### 5. Generate five more proof jsons
+###### 5. _Generate five more proof jsons_
 ```
 ~/zokrates compute-witness -a <a> <b>
 ~/zokrates generate-proof
