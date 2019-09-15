@@ -33,7 +33,7 @@ contract SolnSquareVerifier is ERC721Token{
     struct Solution{
         uint index;
         address solver;
-        address verifierAddress;
+        //address verifierAddress;
     }
 
 // TODO define an array of the above struct
@@ -46,13 +46,13 @@ contract SolnSquareVerifier is ERC721Token{
     event SolutionAdded(uint index, address solver);
 
 // TODO Create a function to add the solutions to the array and emit the event
-    function addSolution(address solver, bytes32 hashedSolution, address verifierAddress) public returns(uint _tokenID){
+    function addSolution(address solver, bytes32 hashedSolution) public returns(uint _tokenID){
         _tokenID = tokenID;
-        Solution memory solution = Solution(tokenID, solver, verifierAddress);
+        //Solution memory solution = Solution(tokenID, solver, verifierAddress);
+        Solution memory solution = Solution(tokenID, solver);
         solutions.push(solution);
         distinctSolution[hashedSolution] = solution;
         emit SolutionAdded(tokenID, solver);
-        tokenID += 1;
     }
 
 
@@ -79,24 +79,22 @@ contract SolnSquareVerifier is ERC721Token{
 
     function mintNFT(
         address to,
-        address verifierAddress,
         uint[2] memory a,
         uint[2][2] memory b,
         uint[2] memory c,
         uint[2] memory inputs
     ) public returns (bool){
         bytes32 hashedSolution = hashSolution(a, b, c, inputs);
-        require(verifierAddress!=address(0), "Address of verifier is invalid");
-        setVerifier(verifierAddress);
         bool verified = verifier.verifyTx(a, b, c, inputs);
         require(verified, "Solution could not be verified");
         require(distinctSolution[hashedSolution].solver == address(0), "Solution has been solved before");
-        addSolution(to, hashedSolution, verifierAddress);
+        addSolution(to, hashedSolution);
         bool mintResult = mint(to, tokenID);
+        tokenID += 1;
         return mintResult;
     }
 
-    function getLatestTokenID() public view returns(uint){
+    function getNextTokenID() public view returns(uint){
         return tokenID;
     }
 
