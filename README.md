@@ -5,8 +5,8 @@ The capstone will build upon the knowledge you have gained in the course in orde
 ***
 # Smart Contract address
 Smart Contracts are deployed to __Rinkeby__ testnet.
-* __SolnSquareVerifier__: 0xA0d9802c5f6f6A5087504BF7D7fC342C3f4138C0
-* __Verifier__: 0x2e7B06b13537E5D715eDadD12D9D403DD332a8a8
+* __SolnSquareVerifier__: 0xc698BE04c294954FeA22d5f7EeA5EefB7dFe6218
+* __Verifier__: 0x68B99dAb984A3B8Bb3418c9CdD22E241E767F9Ba
 
 
 ***
