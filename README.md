@@ -123,6 +123,12 @@ https://rinkeby.opensea.io/assets/0xc698be04c294954fea22d5f7eea5eefb7dfe6218/4
 https://rinkeby.opensea.io/assets/0xc698be04c294954fea22d5f7eea5eefb7dfe6218/5
 
 ***
+# Some useful links
+* [Deploy to testnet by truffle](https://medium.com/@jianjye/5-min-to-deploy-ethereum-smart-contract-to-ropsten-testnet-via-infura-35d556a4c87)
+* [Opensea tutorial on medium](https://medium.com/opensea/how-to-create-your-own-marketplace-on-opensea-in-three-minutes-or-less-12373ca5818a)
+* [Opensea tutorial on youtube](https://www.youtube.com/watch?v=lbXcvRx0o3Y)
+
+***
 # Project Resources
 * [Remix - Solidity IDE](https://remix.ethereum.org/)
 * [Visual Studio Code](https://code.visualstudio.com/)
