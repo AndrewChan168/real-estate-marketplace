@@ -8,6 +8,9 @@ Smart Contracts are deployed to __Rinkeby__ testnet.
 * __SolnSquareVerifier__: 0xc698BE04c294954FeA22d5f7EeA5EefB7dFe6218
 * __Verifier__: 0x68B99dAb984A3B8Bb3418c9CdD22E241E767F9Ba
 
+***
+# Assets list
+https://rinkeby.opensea.io/assets/0xc698be04c294954fea22d5f7eea5eefb7dfe6218/1
 
 ***
 # Project Resources
