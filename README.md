@@ -1,5 +1,5 @@
 # Udacity Decentralised Real Estate Marketplace
-In this project, I build a decentralized housing product basing on Ethereum. The Dapp fulfills ERC721 token standard.
+In this project, I build a decentralized housing product basing on Ethereum. The Dapp fulfills ERC721 token standard and implemented with Zero-Knowledge proofs (zkSnarks project).
 
 ***
 # Libraries used in this project
@@ -20,6 +20,33 @@ cd eth-contracts
 2. install all required packages
 ```js
 npm install
+```
+### Use Zokrates to prepare verifier and proof json
+1. Go to code directory and run docker for ZoKrates
+```
+cd real-estate-marketplace/zokrates/code
+docker run -v /<path to real-estata-marketplace project>/zokrates/code:/home/zokrates/code -ti zokrates/zokrates /bin/bash
+```
+2. Compile the square code
+```
+~/zokrates compile -i ~/code/square/square.code
+~/zokrates setup
+```
+3. Generate witness and proof and export verifier
+```
+~/zokrates compute-witness -a 3 9
+~/zokrates generate-proof
+~/zokrates export-verifier
+```
+4. Move generated code from docker to local file system
+```
+docker cp <container ID>:/home/zokrates/out real-estate-marketplace/zokrates/code/square/ 
+docker cp <container ID>:/home/zokrates/out.code real-estate-marketplace/zokrates/code/square/ 
+docker cp <container ID>:/home/zokrates/proof.json real-estate-marketplace/zokrates/code/square/ 
+docker cp <container ID>:/home/zokrates/proving.key real-estate-marketplace/zokrates/code/square/
+docker cp <container ID>:/home/zokrates/verification.key real-estate-marketplace/zokrates/code/square/
+docker cp <container ID>:/home/zokrates/verifier.sol real-estate-marketplace/zokrates/code/square/
+docker cp <container ID>:/home/zokrates/witness real-estate-marketplace/zokrates/code/square/
 ```
 
 ***
