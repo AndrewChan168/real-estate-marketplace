@@ -11,6 +11,10 @@ Smart Contracts are deployed to __Rinkeby__ testnet.
 ***
 # Assets list
 https://rinkeby.opensea.io/assets/0xc698be04c294954fea22d5f7eea5eefb7dfe6218/1
+https://rinkeby.opensea.io/assets/0xc698be04c294954fea22d5f7eea5eefb7dfe6218/2
+https://rinkeby.opensea.io/assets/0xc698be04c294954fea22d5f7eea5eefb7dfe6218/3
+https://rinkeby.opensea.io/assets/0xc698be04c294954fea22d5f7eea5eefb7dfe6218/4
+https://rinkeby.opensea.io/assets/0xc698be04c294954fea22d5f7eea5eefb7dfe6218/5
 
 ***
 # Project Resources
