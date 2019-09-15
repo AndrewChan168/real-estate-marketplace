@@ -1,6 +1,14 @@
-# Udacity Blockchain Capstone
+# Udacity Decentralised Real Estate Marketplace
+In this project, I build a decentralized housing product basing on Ethereum. The Dapp fulfills ERC721 token standard.
 
-The capstone will build upon the knowledge you have gained in the course in order to build a decentralized housing product. 
+***
+# Libraries used in this project
+This project is implement on on Ethereum and is based on Truffle. The version of libraries used:
+* __Truffle__: v5.0.33
+* __Solidity__: v0.5.0
+* __web3__: v1.2.1
+* __openzeppelin-solidity__: v2.3.0
+* __truffle-hdwallet-provider__: v1.0.7
 
 ***
 # Smart Contract address
