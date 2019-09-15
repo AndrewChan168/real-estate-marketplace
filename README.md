@@ -122,6 +122,13 @@ https://rinkeby.opensea.io/assets/0xc698be04c294954fea22d5f7eea5eefb7dfe6218/3
 https://rinkeby.opensea.io/assets/0xc698be04c294954fea22d5f7eea5eefb7dfe6218/4
 https://rinkeby.opensea.io/assets/0xc698be04c294954fea22d5f7eea5eefb7dfe6218/5
 
+# Assets TX hash
+0x6700f0dde0dbcfa8d0fdab413b84234183a4683afec1688aa8dd06ee58b02413
+0xf3cf8c2a5dd87dd1b8ac18bf22b5dbd1753865a730d7f94a1806fccd21f025cc
+0x9cd947a69991383edcd4227b54ca7d9b604e38387333cbea132cbedeba6a19f7
+0x8f757bccb3d2aa0916cad1b5d2a535720352d2eaf9906542fc77c1432de7a6cc
+0x8d000586a5d8b6d8a08b438c8745da96d628cf65dc0f438bbb18f1630f4d733e
+
 ***
 # Some useful links
 * [Deploy to testnet by truffle](https://medium.com/@jianjye/5-min-to-deploy-ethereum-smart-contract-to-ropsten-testnet-via-infura-35d556a4c87)
