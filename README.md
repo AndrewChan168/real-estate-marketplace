@@ -11,6 +11,18 @@ This project is implement on on Ethereum and is based on Truffle. The version of
 * __truffle-hdwallet-provider__: v1.0.7
 
 ***
+# Install, test and deploy the project
+### Install the packages
+1. go to _eth-contracts_ directory 
+```
+cd eth-contracts
+```
+2. install all required packages
+```js
+npm install
+```
+
+***
 # Smart Contract address
 Smart Contracts are deployed to __Rinkeby__ testnet.
 * __SolnSquareVerifier__: 0xc698BE04c294954FeA22d5f7EeA5EefB7dFe6218
