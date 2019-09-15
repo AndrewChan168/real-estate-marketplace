@@ -15,30 +15,31 @@ This project is implement on on Ethereum and is based on Truffle. The version of
 ### Install the packages
 1. go to _eth-contracts_ directory 
 ```
-cd eth-contracts
+cd /<path to real-estata-marketplace project>/eth-contracts
 ```
 2. install all required packages
 ```js
 npm install
 ```
 ### Use Zokrates to prepare verifier and proof json
-1. Go to code directory and run docker for ZoKrates
+###### 1. Go to code directory and run docker for ZoKrates
 ```
 cd real-estate-marketplace/zokrates/code
 docker run -v /<path to real-estata-marketplace project>/zokrates/code:/home/zokrates/code -ti zokrates/zokrates /bin/bash
 ```
-2. Compile the square code
+###### 2. Compile the square code
 ```
 ~/zokrates compile -i ~/code/square/square.code
 ~/zokrates setup
 ```
-3. Generate witness and proof and export verifier
+###### 3. Generate witness and proof and export verifier
 ```
 ~/zokrates compute-witness -a 3 9
 ~/zokrates generate-proof
 ~/zokrates export-verifier
 ```
-4. Move generated code from docker to local file system
+###### 4. Move generated code from docker to local file system
+Open another terminal
 ```
 docker cp <container ID>:/home/zokrates/out real-estate-marketplace/zokrates/code/square/ 
 docker cp <container ID>:/home/zokrates/out.code real-estate-marketplace/zokrates/code/square/ 
@@ -47,6 +48,64 @@ docker cp <container ID>:/home/zokrates/proving.key real-estate-marketplace/zokr
 docker cp <container ID>:/home/zokrates/verification.key real-estate-marketplace/zokrates/code/square/
 docker cp <container ID>:/home/zokrates/verifier.sol real-estate-marketplace/zokrates/code/square/
 docker cp <container ID>:/home/zokrates/witness real-estate-marketplace/zokrates/code/square/
+```
+###### 5. Generate five more proof jsons
+```
+~/zokrates compute-witness -a <a> <b>
+~/zokrates generate-proof
+docker cp <container ID>:/home/zokrates/proof.json real-estate-marketplace/zokrates/code/square/ 
+```
+### Test contracts
+go to _eth-contracts_ directory 
+```
+cd /<path to real-estata-marketplace project>/eth-contracts
+truffle comiple
+truffle test
+```
+### Deploy contracts to Rinkeby testnet
+```
+truffle deploy --network rinkeby
+```
+### Use truffle to mint five more tokens
+```
+const fs = require('fs')
+var proofJSON
+var proof
+var inputs
+
+const owner = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+let verifier = await Verifier.at("0x68B99dAb984A3B8Bb3418c9CdD22E241E767F9Ba")
+let contract = await SolnSquareVerifier.at("0xc698BE04c294954FeA22d5f7EeA5EefB7dFe6218")
+
+//#1
+proofJSON = JSON.parse(fs.readFileSync("../zokrates/code/square/proof1.json"))
+proof = proofJSON.proof
+inputs = proofJSON.inputs
+await contract.mintNFT(owner, proof.a, proof.b, proof.c, inputs, {from:owner})
+
+//#2
+proofJSON = JSON.parse(fs.readFileSync("../zokrates/code/square/proof2.json"))
+proof = proofJSON.proof
+inputs = proofJSON.inputs
+await contract.mintNFT(owner, proof.a, proof.b, proof.c, inputs, {from:owner})
+
+//#3
+proofJSON = JSON.parse(fs.readFileSync("../zokrates/code/square/proof3.json"))
+proof = proofJSON.proof
+inputs = proofJSON.inputs
+await contract.mintNFT(owner, proof.a, proof.b, proof.c, inputs, {from:owner})
+
+//#4
+proofJSON = JSON.parse(fs.readFileSync("../zokrates/code/square/proof4.json"))
+proof = proofJSON.proof
+inputs = proofJSON.inputs
+await contract.mintNFT(owner, proof.a, proof.b, proof.c, inputs, {from:owner})
+
+//#5
+proofJSON = JSON.parse(fs.readFileSync("../zokrates/code/square/proof5.json"))
+proof = proofJSON.proof
+inputs = proofJSON.inputs
+await contract.mintNFT(owner, proof.a, proof.b, proof.c, inputs, {from:owner})
 ```
 
 ***
